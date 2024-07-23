@@ -1,0 +1,80 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+html {
+    overscroll-behavior-x: none;
+}
+
+body {
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* Other containers */
+.default-container {
+    background-color: #2a2e32;
+    min-height: 100vh;
+}
+
+.default-container .navbar {
+    opacity: 1.0;
+    background-color: #52616B;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: white;
+    transition: color;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Default Footer */
+.default-footer {
+    position: sticky;
+    background-blend-mode: multiply;
+    background: #212529;
+    background-image: url(../images/common-bg.svg);
+}
+
+/* Footer icons */
+.fa {
+    color: white;
+    transition: color 0.2s ease-in-out;
+}
+
+.fa:hover {
+    color: grey;
+}
+
+.custom-popover {
+    --bs-popover-max-width: 200px;
+    --bs-popover-border-color: var(--bs-primary);
+    --bs-popover-header-bg: var(--bs-primary);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+  }

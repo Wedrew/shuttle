@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="default-container">
+        <!-- Navigation bar -->
+        <header class="header">
+            <%- include('../partials/header'); %>
+        </header>
+
+        <main>
+            <%- include(page) %>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="default-footer">
+        <%- include('../partials/footer'); %>
+    </div>
+
+    <!-- Dependencies -->
+    <%- include('../partials/dependencies'); %>
+</body>
+
+</html>

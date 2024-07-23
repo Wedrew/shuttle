@@ -1,0 +1,65 @@
+<div class="container my-5">
+    <h1 class="text-center text-white text-decoration-underline">Get In Touch</h1>
+    <p class="text-center text-white" style="word-wrap:break-word;">
+        Thank you for your interest in contacting me. Please use the form below to send
+        me a message with any questions, comments, or inquiries you may have. You may 
+        also email me direcly at <a target="_top" href="mailto:contact@andrewtpagan.com">contact@andrewtpagan.com</a>.
+        I will do my best to respond to your message as soon as possible. Please note that all fields marked with an asterisk 
+        (*) are required.</p>
+</div>
+
+
+<div class="container-sm">
+    <form class="needs-validation" method="dialog" id="contact-form" enctype="multipart/form-data" novalidate>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="first-name" class="form-label text-white">First name*</label>
+                <input type="text" class="form-control" name="first-name" id="first-name" placeholder="John" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="last-name" class="form-label text-white">Last name*</label>
+                <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Doe" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="company" class="form-label text-white">Company</label>
+                <input type="text" class="form-control" name="company" id="company" placeholder="">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="email-address" class="form-label text-white">Email Address*</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="email" name="email"
+                        pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" placeholder="your@email.com"
+                        aria-describedby="inputGroupPrepend" required>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="phone-number" class="form-label text-white">Phone Number</label>
+                <input type="text" class="form-control" name="phone-number" id="phone-number" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="message" class="form-label text-white">Message*</label>
+                <textarea class="form-control" id="message" name="message" rows="5"
+                    placeholder="Your message here..." required></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="text-center">
+                    <button class="btn" id="contact-submit-button" onclick="submit_contact_form(event)" type="submit"
+                        style="color: white; background-color: #52616B;">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

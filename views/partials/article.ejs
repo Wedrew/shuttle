@@ -1,0 +1,64 @@
+<body class="blog-post">
+    <main>
+        <article>
+            <p class="decorative-image">
+                <img src="/uploads/<%- article.image %>" alt="">
+            </p>
+            <header>
+                <h2 class="title"><%- article.title %></h2>
+                <time class="date"><%- article.date %> | Written by Andrew Pagán</time>
+            </header>
+            <section class="markdown">
+                <%- include(article.html_file) %>
+            </section>
+        </article>
+    </main>
+    <hr class="dnone">
+</body>
+
+<!-- Comment section -->
+<div class="container my-5">
+    <h1 class="text-center mb-4">Comment Section</h1>
+
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name (optional)</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message (required)</label>
+            <textarea class="form-control" id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn " style="color: white; background-color: #52616B;">Submit</button>
+    </form>
+
+    <hr>
+
+    <div id="comments"></div>
+</div>
+
+<script>
+    // add event listener to form submission
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // prevent form from submitting
+
+        // get form data
+        const name = document.querySelector('#name').value.trim();
+        const message = document.querySelector('#message').value.trim();
+
+        // create new comment element
+        const comment = document.createElement('div');
+        comment.classList.add('card', 'my-3');
+        comment.innerHTML = `
+        <div class="card-body">
+          <h5 class="card-title text-black">${name ? name : 'Anonymous'}</h5>
+          <p class="card-text text-black">${message}</p>
+        </div>`;
+
+        // add comment to comments section
+        document.querySelector('#comments').appendChild(comment);
+
+        // reset form
+        document.querySelector('form').reset();
+    });
+</script>

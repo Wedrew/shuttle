@@ -1,0 +1,30 @@
+{
+  "name": "shuttle_cosc412",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev_start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.2",
+    "connect-redis": "^7.0.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "memorystore": "^1.6.7",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "redis": "^4.6.5",
+    "redis-om": "^0.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

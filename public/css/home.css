@@ -1,0 +1,93 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+html {
+    overscroll-behavior-x: none;
+}
+  
+
+body {
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(71, 71, 71);
+}
+
+main {
+    flex: 1;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* Home container */
+.default-container {
+    background-image: url(../images/andrew_full_body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode: multiply;
+    background-origin: content-box;
+    height: 100vh;
+}
+
+.default-container .navbar {
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to bottom, rgb(71, 71, 71), rgba(71, 71, 71, 0));
+    background: -moz-linear-gradient(to bottom, rgb(71, 71, 71), rgba(71, 71, 71, 0));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, rgb(71, 71, 71), rgba(71, 71, 71, 0));
+}
+
+.intro-text {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    padding: 20px 40px;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: white;
+    transition: color;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Home Footer */
+.default-footer {
+    position: sticky;
+    background-blend-mode: multiply;
+    background-image: url(../images/common-bg.svg);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to top, rgb(71, 71, 71), rgba(71, 71, 71, 0));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, rgb(71, 71, 71), rgba(71, 71, 71, 0));
+}
+
+/* Footer icons */
+.fa {
+    color: white;
+    transition: color 0.2s ease-in-out;
+}
+
+.fa:hover {
+    color: grey;
+}

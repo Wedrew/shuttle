@@ -1,0 +1,46 @@
+<div class="container p-3">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% articles_list.forEach(function(article) { %>
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img src="/uploads/<%=article.image %>" class="card-img-top" style="height: 12rem;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= article.title %>
+            </h5>
+            <p class="card-text">
+              <button type="button" class="btn" style="color: white; background-color: #52616B;" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="<%= article.description %>">Description</button>
+              <a href=/article/entry/<%= article.id %> class="btn" style="color: white; background-color: #52616B;">Read</a>
+              <% if(admin) { %>
+                <a href=/article/entry/<%= article.id %> class="btn" style="color: white; background-color: #52616B;">Modify</a>
+                <a href=/article/entry/<%= article.id %> class="btn" style="color: white; background-color: #52616B;">Delete</a>
+              <% } %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Posted on <%= article.date %></small>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+
+      <% if(admin) { %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="/images/placeholder.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                Create new article
+              </h5>
+              <p class="card-text">
+                New article
+              </p>
+              <div class="text-center">
+                <a href="/article/new" class="btn" style="color: white; background-color: #52616B;">Create</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+  </div>
+</div>
