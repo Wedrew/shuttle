@@ -12,6 +12,12 @@ import fs from "fs";
 import { session_client } from "./db/session_client.js";
 import { storage_client } from "./db/storage_client.js";
 import { router as home_router } from "./routes/home.js";
+import { router as contact_router } from "./routes/contact.js";
+import { router as aboutus_router } from "./routes/about_us.js";
+import { router as catalog_router } from "./routes/catalog.js";
+import { router as gambling_router } from "./routes/gambling.js";
+import { router as auth_router } from "./routes/auth.js";
+import { router as lost_router } from "./routes/lost.js";
 
 // Create application
 const app = new express();
@@ -57,6 +63,25 @@ app.use(function (req, res, next) {
 
 // Home page
 app.use("/", home_router);
+
+// Catelog page
+app.use("/catalog", catalog_router);
+
+// Gambling page
+app.use("/gambling", gambling_router);
+
+// Contact page
+app.use("/contact", contact_router);
+
+// About us
+app.use("/about-us", aboutus_router);
+
+// Authentication
+app.use("/auth", auth_router);
+
+// Lost page
+app.use("/lost", lost_router);
+
 
 // 404
 app.use(async function (req, res, next) {
