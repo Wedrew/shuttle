@@ -16,14 +16,14 @@ router.get('/', async function (req, res) {
 
 // Contact form submissions
 router.post('/contact-form', form_parser.fields([]), async function (req, res) {
-
     const transporter = nodemailer.createTransport({
-        host: process.env.EMAIL_SERVER,
-        port: process.env.EMAIL_PORT,
-        secure: true,
+        service: "Gmail",
         auth: {
             user: process.env.EMAIL_ADDRESS,
             pass: process.env.EMAIL_PASSWORD
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
 
