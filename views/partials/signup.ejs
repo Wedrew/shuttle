@@ -1,5 +1,5 @@
 <section class="vh-100 gradient-custom">
-    <form class="needs-validation" method="dialog" id="login-form" novalidate>
+    <form class="needs-validation" method="dialog" id="signup-form" novalidate>
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-10">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -8,7 +8,7 @@
 
               <div class="mb-md-5 mt-md-4 pb-5">
 
-                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
                 <p class="text-white-50 mb-5">Please enter your username and password.</p>
 
                 <div class="form-outline form-white mb-4">
@@ -20,18 +20,15 @@
                   <input type="password" name="password" id="password" placeholder="Password" class="form-control form-control-lg" required>
                 </div>
 
-                <p class="small mb-3 pb-lg-2"><a class="text-white-50" href="/lost/unimplemented">Forgot password?</a></p>
+
+                <div class="form-outline form-white mb-4">
+                    <input type="email" name="email" id="email" placeholder="Email" class="form-control form-control-lg" required>
+                  </div>
 
                 <!-- <button class="btn btn-outline-light btn-lg px-5" formmethod="post" type="submit">Login</button> -->
-                <button class="btn btn-lg px-5" onclick="submit_login_form(event)" type="submit" id="login-submit-button"
+                <button class="btn btn-lg px-5" onclick="submit_signup_form(event)" type="submit" id="signup-submit-button"
                   style="color: white; background-color: #52616B;">Submit</button>
               </div>
-
-              <div>
-                <p class="mb-0">Don't have an account? <a href="/signup" class="text-white-50 fw-bold">Sign Up</a>
-                </p>
-              </div>
-
             </div>
           </div>
         </div>

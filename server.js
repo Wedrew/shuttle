@@ -17,6 +17,7 @@ import { router as aboutus_router } from "./routes/about_us.js";
 import { router as catalog_router } from "./routes/catalog.js";
 import { router as gambling_router } from "./routes/gambling.js";
 import { router as auth_router } from "./routes/auth.js";
+import { router as signup_router } from "./routes/signup.js";
 import { router as lost_router } from "./routes/lost.js";
 
 // Create application
@@ -78,6 +79,9 @@ app.use("/about-us", aboutus_router);
 
 // Authentication
 app.use("/auth", auth_router);
+
+// Authentication
+app.use("/signup", signup_router);
 
 // Lost page
 app.use("/lost", lost_router);

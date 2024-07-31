@@ -84,6 +84,54 @@ function submit_login_form(event) {
     }
 }
 
+function submit_signup_form(event) {
+    // Prevent default
+    event.preventDefault();
+    // Get login form
+    const login_form = document.getElementById('signup-form');
+    const form_data = new FormData(login_form);
+
+    // Get button
+    const login_submit_button = document.getElementById("signup-submit-button");
+
+    if (!login_form.checkValidity()) {
+        event.stopPropagation();
+        login_form.classList.add('was-validated');
+    } else {
+        // Disable button and set spinner
+        login_submit_button.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`;
+        login_submit_button.setAttribute("disabled", "true");
+        // Post login_form
+        fetch('/signup/signup-form', {
+            method: 'post',
+            body: form_data
+        })
+            .then(response => {
+                if (response.ok && response.redirected) {
+                    window.location.href = response.url;
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data) {
+                    console.log(data);
+                    // Remove validated
+                    login_form.classList.remove('was-validated');
+                    // Display alert
+                    handle_form_response(data.status, data.message);
+                    // Reset form
+                    login_form.reset();
+                    // Scroll to the top of the page
+                    window.scrollTo(0, 0);
+                    login_submit_button.innerHTML = "Submit";
+                    login_submit_button.removeAttribute("disabled");
+                }
+            })
+            .catch(error => console.log(error.message));
+    }
+}
+
+
 function submit_logout_delete(event) {
     // Prevent default
     event.preventDefault();
